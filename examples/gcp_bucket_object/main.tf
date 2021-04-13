@@ -1,8 +1,8 @@
 module "filter_files" {
   source = "../.."
 
-  files_src    = "../build"
-  file_filters = [
+  base_dir    = "../build"
+  filters = [
     {
       regex : ".html$"
       contentType  = "text/html"
@@ -49,6 +49,4 @@ resource "google_storage_bucket_object" "files" {
   cache_control = each.value.cacheControl
   content_type = each.value.contentType
   bucket   = var.bucket
-
-
 }
