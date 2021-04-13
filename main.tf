@@ -1,3 +1,8 @@
+terraform {
+  // We are using the validation functionality introduced in terraform 0.13
+  required_version = ">= 0.13"
+}
+
 locals {
   // This value fetches all the files in the build dir. We use this as a separate local so we don't have to run
   // the fileset function each time in the loop below
